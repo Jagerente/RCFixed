@@ -695,7 +695,7 @@ public class HERO : Photon.MonoBehaviour
 
     private void checkDashRebind()
     {
-        if (FengGameManagerMKII.inputRC.isInputHuman(InputCodeRC.dash))
+        if (FengGameManagerMKII.inputRC.isInputHumanDown(InputCodeRC.dash))
         {
             if (this.inputManager.isInput[InputCode.up])
             {
