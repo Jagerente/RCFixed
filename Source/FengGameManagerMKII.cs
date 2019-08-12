@@ -12046,13 +12046,11 @@ public class FengGameManagerMKII : Photon.MonoBehaviour
         this.cT = new ArrayList();
         this.hooks = new ArrayList();
         this.name = string.Empty;
-        nameField = PlayerPrefs.GetString("name", string.Empty);
-        LoginFengKAI.player.guildname = PlayerPrefs.GetString("guildname", string.Empty);
+
         if (privateServerField == null)
         {
             privateServerField = string.Empty;
         }
-        settings[0xbb] = 1;
         usernameField = string.Empty;
         passwordField = string.Empty;
         this.resetGameSettings();
@@ -12125,6 +12123,9 @@ public class FengGameManagerMKII : Photon.MonoBehaviour
         }
         this.setBackground();
         ChangeQuality.setCurrentQuality();
+        nameField = PlayerPrefs.GetString("name", string.Empty);
+        LoginFengKAI.player.guildname = PlayerPrefs.GetString("guildname", string.Empty);
+        settings[0xbb] = 1;
     }
 
     [RPC]
