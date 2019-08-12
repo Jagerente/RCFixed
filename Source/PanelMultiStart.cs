@@ -28,7 +28,7 @@ public class PanelMultiStart : MonoBehaviour
             this.label_server_EU.GetComponent<UILabel>().text = Language.btn_server_EU[Language.type];
             this.label_server_ASIA.GetComponent<UILabel>().text = Language.btn_server_ASIA[Language.type];
             this.label_server_JAPAN.GetComponent<UILabel>().text = Language.btn_server_JAPAN[Language.type];
-            this.label_QUICK_MATCH.GetComponent<UILabel>().text = "Offline mode";
+            this.label_QUICK_MATCH.GetComponent<UILabel>().text = "OFFLINE";
             this.label_server.GetComponent<UILabel>().text = Language.choose_region_server[Language.type];
         }
     }
