@@ -1,4 +1,6 @@
 ﻿using ExitGames.Client.Photon;
+using System;
+using System.IO;
 using UnityEngine;
 
 class HotKeys
