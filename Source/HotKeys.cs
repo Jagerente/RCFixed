@@ -38,5 +38,13 @@ class HotKeys
                 FengGameManagerMKII.instance.restartGameSingle();
             }
         }
+
+        //Captures a screenshoot
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            var path = Application.dataPath + "/Screenshoots";
+            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+            Application.CaptureScreenshot(Application.dataPath + "/Screenshoots/Screenshot_" + DateTime.Now.ToString("yyyy:mm:dd:hh:mm:ss").Replace(":", "-") + ".png");
+        }
     }
 }
