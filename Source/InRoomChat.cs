@@ -20,7 +20,7 @@ public class InRoomChat : Photon.MonoBehaviour
         messages.Add(newLine);
     }
 
-    public void AddLineRC(string newline)
+    public static void AddLineRC(string newline)
     {
         messages.Add(RCLine(newline));
     }
@@ -302,20 +302,20 @@ public class InRoomChat : Photon.MonoBehaviour
                 {
                     FengGameManagerMKII.settings[0xf5] = 1;
                     FengGameManagerMKII.instance.EnterSpecMode(true);
-                    this.AddLineRC("You have entered spectator mode.");
+                    AddLineRC("You have entered spectator mode.");
                 }
                 else
                 {
                     FengGameManagerMKII.settings[0xf5] = 0;
                     FengGameManagerMKII.instance.EnterSpecMode(false);
-                    this.AddLineRC("You have exited spectator mode.");
+                    AddLineRC("You have exited spectator mode.");
                 }
                 return;
 
             case "fov":
                 int num6 = Convert.ToInt32(args[1]);
                 Camera.main.fieldOfView = num6;
-                this.AddLineRC("Field of vision set to " + num6.ToString() + ".");
+                AddLineRC("Field of vision set to " + num6.ToString() + ".");
                 return;
 
             case "colliders":
@@ -349,113 +349,113 @@ public class InRoomChat : Photon.MonoBehaviour
                     AddLineRC("Currently activated gamemodes:");
                     if (RCSettings.bombMode > 0)
                     {
-                        this.AddLineRC("Bomb mode is on.");
+                        AddLineRC("Bomb mode is on.");
                     }
                     if (RCSettings.teamMode > 0)
                     {
                         if (RCSettings.teamMode == 1)
                         {
-                            this.AddLineRC("Team mode is on (no sort).");
+                            AddLineRC("Team mode is on (no sort).");
                         }
                         else if (RCSettings.teamMode == 2)
                         {
-                            this.AddLineRC("Team mode is on (sort by size).");
+                            AddLineRC("Team mode is on (sort by size).");
                         }
                         else if (RCSettings.teamMode == 3)
                         {
-                            this.AddLineRC("Team mode is on (sort by skill).");
+                            AddLineRC("Team mode is on (sort by skill).");
                         }
                     }
                     if (RCSettings.pointMode > 0)
                     {
-                        this.AddLineRC("Point mode is on (" + Convert.ToString(RCSettings.pointMode) + ").");
+                        AddLineRC("Point mode is on (" + Convert.ToString(RCSettings.pointMode) + ").");
                     }
                     if (RCSettings.disableRock > 0)
                     {
-                        this.AddLineRC("Punk Rock-Throwing is disabled.");
+                        AddLineRC("Punk Rock-Throwing is disabled.");
                     }
                     if (RCSettings.spawnMode > 0)
                     {
-                        this.AddLineRC("Custom spawn rate is on (" + RCSettings.nRate.ToString("F2") + "% Normal, " + RCSettings.aRate.ToString("F2") + "% Abnormal, " + RCSettings.jRate.ToString("F2") + "% Jumper, " + RCSettings.cRate.ToString("F2") + "% Crawler, " + RCSettings.pRate.ToString("F2") + "% Punk");
+                        AddLineRC("Custom spawn rate is on (" + RCSettings.nRate.ToString("F2") + "% Normal, " + RCSettings.aRate.ToString("F2") + "% Abnormal, " + RCSettings.jRate.ToString("F2") + "% Jumper, " + RCSettings.cRate.ToString("F2") + "% Crawler, " + RCSettings.pRate.ToString("F2") + "% Punk");
                     }
                     if (RCSettings.explodeMode > 0)
                     {
-                        this.AddLineRC("Titan explode mode is on (" + Convert.ToString(RCSettings.explodeMode) + ").");
+                        AddLineRC("Titan explode mode is on (" + Convert.ToString(RCSettings.explodeMode) + ").");
                     }
                     if (RCSettings.healthMode > 0)
                     {
-                        this.AddLineRC("Titan health mode is on (" + Convert.ToString(RCSettings.healthLower) + "-" + Convert.ToString(RCSettings.healthUpper) + ").");
+                        AddLineRC("Titan health mode is on (" + Convert.ToString(RCSettings.healthLower) + "-" + Convert.ToString(RCSettings.healthUpper) + ").");
                     }
                     if (RCSettings.infectionMode > 0)
                     {
-                        this.AddLineRC("Infection mode is on (" + Convert.ToString(RCSettings.infectionMode) + ").");
+                        AddLineRC("Infection mode is on (" + Convert.ToString(RCSettings.infectionMode) + ").");
                     }
                     if (RCSettings.damageMode > 0)
                     {
-                        this.AddLineRC("Minimum nape damage is on (" + Convert.ToString(RCSettings.damageMode) + ").");
+                        AddLineRC("Minimum nape damage is on (" + Convert.ToString(RCSettings.damageMode) + ").");
                     }
                     if (RCSettings.moreTitans > 0)
                     {
-                        this.AddLineRC("Custom titan # is on (" + Convert.ToString(RCSettings.moreTitans) + ").");
+                        AddLineRC("Custom titan # is on (" + Convert.ToString(RCSettings.moreTitans) + ").");
                     }
                     if (RCSettings.sizeMode > 0)
                     {
-                        this.AddLineRC("Custom titan size is on (" + RCSettings.sizeLower.ToString("F2") + "," + RCSettings.sizeUpper.ToString("F2") + ").");
+                        AddLineRC("Custom titan size is on (" + RCSettings.sizeLower.ToString("F2") + "," + RCSettings.sizeUpper.ToString("F2") + ").");
                     }
                     if (RCSettings.banEren > 0)
                     {
-                        this.AddLineRC("Anti-Eren is on. Using Titan eren will get you kicked.");
+                        AddLineRC("Anti-Eren is on. Using Titan eren will get you kicked.");
                     }
                     if (RCSettings.waveModeOn == 1)
                     {
-                        this.AddLineRC("Custom wave mode is on (" + Convert.ToString(RCSettings.waveModeNum) + ").");
+                        AddLineRC("Custom wave mode is on (" + Convert.ToString(RCSettings.waveModeNum) + ").");
                     }
                     if (RCSettings.friendlyMode > 0)
                     {
-                        this.AddLineRC("Friendly-Fire disabled. PVP is prohibited.");
+                        AddLineRC("Friendly-Fire disabled. PVP is prohibited.");
                     }
                     if (RCSettings.pvpMode > 0)
                     {
                         if (RCSettings.pvpMode == 1)
                         {
-                            this.AddLineRC("AHSS/Blade PVP is on (team-based).");
+                            AddLineRC("AHSS/Blade PVP is on (team-based).");
                         }
                         else if (RCSettings.pvpMode == 2)
                         {
-                            this.AddLineRC("AHSS/Blade PVP is on (FFA).");
+                            AddLineRC("AHSS/Blade PVP is on (FFA).");
                         }
                     }
                     if (RCSettings.maxWave > 0)
                     {
-                        this.AddLineRC("Max Wave set to " + RCSettings.maxWave.ToString());
+                        AddLineRC("Max Wave set to " + RCSettings.maxWave.ToString());
                     }
                     if (RCSettings.horseMode > 0)
                     {
-                        this.AddLineRC("Horses are enabled.");
+                        AddLineRC("Horses are enabled.");
                     }
                     if (RCSettings.ahssReload > 0)
                     {
-                        this.AddLineRC("AHSS Air-Reload disabled.");
+                        AddLineRC("AHSS Air-Reload disabled.");
                     }
                     if (RCSettings.punkWaves > 0)
                     {
-                        this.AddLineRC("Punk override every 5 waves enabled.");
+                        AddLineRC("Punk override every 5 waves enabled.");
                     }
                     if (RCSettings.endlessMode > 0)
                     {
-                        this.AddLineRC("Endless Respawn is enabled (" + RCSettings.endlessMode.ToString() + " seconds).");
+                        AddLineRC("Endless Respawn is enabled (" + RCSettings.endlessMode.ToString() + " seconds).");
                     }
                     if (RCSettings.globalDisableMinimap > 0)
                     {
-                        this.AddLineRC("Minimap are disabled.");
+                        AddLineRC("Minimap are disabled.");
                     }
                     if (RCSettings.motd != string.Empty)
                     {
-                        this.AddLineRC("MOTD:" + RCSettings.motd);
+                        AddLineRC("MOTD:" + RCSettings.motd);
                     }
                     if (RCSettings.deadlyCannons > 0)
                     {
-                        this.AddLineRC("Cannons will kill humans.");
+                        AddLineRC("Cannons will kill humans.");
                     }
                 }
                 return;
