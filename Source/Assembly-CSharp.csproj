@@ -49,6 +49,7 @@
     <Compile Include="Global.cs" />
     <Compile Include="AHSSShotGunCollider.cs" />
     <Compile Include="GAMETYPE.cs" />
+    <Compile Include="HotKeys.cs" />
     <Compile Include="IN_GAME_MAIN_CAMERA.cs" />
     <Compile Include="PhotonView.cs" />
     <Compile Include="Extensions.cs" />

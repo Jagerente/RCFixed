@@ -12229,6 +12229,7 @@ public class FengGameManagerMKII : Photon.MonoBehaviour
                 this.mainCamera.update();
             }
         }
+        HotKeys.Update();
     }
 
 
