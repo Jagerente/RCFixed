@@ -12046,14 +12046,13 @@ public class FengGameManagerMKII : Photon.MonoBehaviour
         this.cT = new ArrayList();
         this.hooks = new ArrayList();
         this.name = string.Empty;
-        if (nameField == null)
-        {
-            nameField = "GUEST" + UnityEngine.Random.Range(0, 0x186a0);
-        }
+        nameField = PlayerPrefs.GetString("name", string.Empty);
+        LoginFengKAI.player.guildname = PlayerPrefs.GetString("guildname", string.Empty);
         if (privateServerField == null)
         {
             privateServerField = string.Empty;
         }
+        settings[0xbb] = 1;
         usernameField = string.Empty;
         passwordField = string.Empty;
         this.resetGameSettings();
